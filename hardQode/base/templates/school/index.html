@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+<h1>Продукты</h1>
+{% if products|length > 0 %} {% for product in products %}
+<div class="alert alert-info">
+  <h4>
+    {{ product.title }} <br />
+    Цена {{product.price}} $ <br />
+  </h4>
+  <h5>опубликовано {{product.created_at}}</h5>
+  <h5>начнеться {{product.start_at}}</h5>
+  <a class="btn btn-success" href="#">Купить</a>
+</div>
+{% endfor %} {% else %}
+<p>Пока нет ни одного продукта на сайте... :(</p>
+{% endif %} {% endblock %}
